@@ -1,0 +1,301 @@
+/* =========================================
+   🎬 CineNight Theme — WatchTogether
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+  --bg-main: #0B0F19;
+  --bg-surface: #141B2D;
+  --bg-glass: rgba(20,27,45,0.75);
+  --bg-hover: #1E293B;
+
+  --primary: #3B82F6;
+  --primary-soft: #93C5FD;
+  --primary-glow: rgba(59,130,246,0.5);
+
+  --success: #22C55E;
+  --warning: #FACC15;
+  --danger: #EF4444;
+
+  --text-main: #E5E7EB;
+  --text-muted: #94A3B8;
+  --text-faint: #64748B;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-soft: 0 12px 32px rgba(0,0,0,0.5);
+  --glow-primary: 0 0 24px rgba(59,130,246,0.5);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* ---------- Reset ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0f172a, var(--bg-main));
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Layout ---------- */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  padding: 20px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  letter-spacing: 0.4px;
+}
+
+.tag {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.footer {
+  padding: 12px;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  background: var(--bg-hover);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.btn:hover {
+  background: #273449;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+}
+
+.btn.primary:hover {
+  box-shadow: var(--glow-primary);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---------- Inputs ---------- */
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid #1f2937;
+  background: var(--bg-hover);
+  color: var(--text-main);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Start Screen ---------- */
+
+.start-screen {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.large-btn {
+  padding: 18px 34px;
+  font-size: 16px;
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- Modal ---------- */
+
+.modal {
+  width: 420px;
+  margin: 60px auto;
+  animation: fadeUp 0.4s ease;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ---------- Main Panel ---------- */
+
+.panel {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  padding: 0 36px;
+}
+
+/* ---------- Video ---------- */
+
+#player {
+  width: 100%;
+  height: 480px;
+  background: black;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ---------- Host Controls ---------- */
+
+.loader-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.file-label {
+  background: #1e293b;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.file-label:hover {
+  background: #334155;
+}
+
+.control-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* ---------- Participants ---------- */
+
+.participant {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ---------- Chat ---------- */
+
+.chat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatMessages {
+  flex: 1;
+  background: rgba(0,0,0,0.35);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chatMessages div {
+  margin-bottom: 6px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Helpers ---------- */
+
+.muted {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  #player {
+    height: 300px;
+  }
+}
+button {
+  touch-action: manipulation;
+}
